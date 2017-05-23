@@ -57,12 +57,18 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
     @IBAction func submitButtonPressed(_ sender: Any) {
         var alert : UIAlertController
         
-        let selectedAnswer = CardCollection.instance.currentCard.options[answerPickerView.selectedRow(inComponent: 0)]
-        
-        if selectedAnswer == CardCollection.instance.currentCard.correctAnswer {
-            alert = UIAlertController(title: "Correct!", message: "Correct answer!", preferredStyle: UIAlertControllerStyle.alert)
+        if CardCollection.instance.checkAnswer(answerPickerView.selectedRow(inComponent: 0)){
+            // answer is correct
+            alert = UIAlertController(title: "Correct", message: "Correct Answer!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yay!", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else {
+            // answer incorrect
+            alert = UIAlertController(title: "Incorrect", message: "Incorrect Answer.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Aww.", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)
             
-            alert.addAction(UIAlertAction(title: "Yay!", style: UIAlertActionStyle.default, handler: nil) )
         }
         
     }
