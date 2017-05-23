@@ -49,6 +49,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-0j-s8p">
                                         <rect key="frame" x="0.0" y="601" width="343" height="30"/>
                                         <state key="normal" title="Final Answer!"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ofd-zG-Ptr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,6 +64,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gPO-y6-7os" secondAttribute="trailing" id="L8v-BW-tTC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerPickerView" destination="ra1-fa-XA6" id="vO8-Gx-6hy"/>
+                        <outlet property="questionLabel" destination="cfj-Sz-EFE" id="274-90-8a1"/>
+                        <outlet property="questionTextView" destination="b4k-mj-6ww" id="Lte-eU-R0W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
